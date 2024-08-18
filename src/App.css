@@ -1,38 +1,236 @@
-.App {
+:root {
+  --primary-color: #3498db;
+  --background-color: #444;
+  --text-color: #333;
+  --button-hover-color: black;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  background: white;
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Header */
+.app-header {
+  background: black;
+  padding: 20px;
+  color: white;
   text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Navigation Links */
+.nav-links {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 20px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: #3498db;
+  border-radius: 5px;
+}
+
+/* Main Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Cards */
+.card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  background-color: white;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Buttons */
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 50%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+
+}
+.darkMode button{
+  padding: 10px 100%;
+}
+button:hover {
+  background-color: var(--button-hover-color);
+  transform: translateY(-2px);
+}
+
+/* Typography */
+h1, h2, h3 {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  margin-top: 0;
+  color: black;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+/* Forms */
+form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+select {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+input[type="submit"] {
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #218838;
+}
+
+/* DarkMode */
+dark-mode {
+  background-color: #000000;
+  color: #f4f4f4;
+}
+
+.dark-mode nav {
+  background-color: #000;
+}
+
+.dark-mode header, .dark-mode main, .dark-mode footer {
+  background-color: black;
+  border-color: #555;
+}
+.dark-mode h1 {
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.dark-mode h2 {
+  color: white;
+}
+.dark-mode h3 {
+  color: white;
+}
+.dark-mode p {
+  color: white;
+}
+.dark-mode button {
+  background-color: #555;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.dark-mode button:hover {
+  background-color: #444;
+}
+.dark-mode form {
+  background-color: black;
+}
+.dark-mode select {
+  background-color: #444;
+  color: white;
+}
+.dark-mode input, .dark-mode textarea {
+  background-color: #555;
+  border-color: #666;
+  color: #f4f4f4;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  position: relative;
+  bottom: 0;
+  top: -8px;
+  width: 100%;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+      flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .app-header {
+      text-align: center;
   }
+  .container {
+      padding: 10px;
+  }
+}
+.dashboard-button{
+  text-decoration: none;
+  color: black;
+  padding: 10px 20px 10px;
+  transition: background-color 0.3s ease;
+  background-color: #3498db;
+  border-radius: 250px;
+  position: relative;
+  bottom: 15px;
+  left: 35px;
+}
+.home-page  h1, p, h2, h3{
+  position: relative;
+  left: 40px;
+}
+.darkMode div{
+  color: black;
+}
+.dark-mode label{
+  color: white;
 }
